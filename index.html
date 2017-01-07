@@ -16,7 +16,7 @@
   };
   firebase.initializeApp(config);
 	 var storage = firebase.storage();
-	var ref = firebase.database().ref(‘myData/' );
+	var ref = firebase.database().ref('myData/' );
 ref.transaction(function(qTotal) {
     var current = qTotal ? qTotal.numChildren() : 0;
 		console.log(current);
