@@ -2,6 +2,33 @@
 <html lang="en">
 
 <body>﻿
+	
+	
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB1Pbceeost6PDTQneyx3X3IZB_3xSZspg",
+    authDomain: "mywebsitecounter.firebaseapp.com",
+    databaseURL: "https://mywebsitecounter.firebaseio.com",
+    storageBucket: "mywebsitecounter.appspot.com",
+    messagingSenderId: "795789832010"
+  };
+  firebase.initializeApp(config);
+	 var storage = firebase.storage();
+	var ref = firebase.database().ref(‘myData/' );
+ref.transaction(function(qTotal) {
+    var current = qTotal ? qTotal.numChildren() : 0;
+		console.log(current);
+    var total = current + 1;
+    var queId = ref.push().key;
+    qtotal[queId] = {
+      counter : total,
+      dateCreated: Date()
+    };
+    return qTotal;
+}
+</script>
 
 <head>
 
